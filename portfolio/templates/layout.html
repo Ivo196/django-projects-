@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -11,12 +12,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
   </head>
   <body>
-    <h1>Navbar</h1>
-
-    {% block content %} {% endblock %}
-
-    <footer>Footer</footer>
+    {% include 'partials/navbar.html' %}
+    <div class="container p-4">{% block content %} {% endblock %}</div>
   </body>
 </html>
